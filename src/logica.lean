@@ -10,6 +10,20 @@ https://leanprover-community.github.io/get_started.html
 -/
 
 /-
+Se recomienda enfáticamente participar activamente en este curso:
+no sólo escuche, pruebe también! 
+
+Si de verdad intentó instalar Lean y no pudo por alguna razón,
+una opción alternativa es ver esta hoja en línea:
+
+https://leanprover-community.github.io/lean-web-editor/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fgoens%2Fsmf-ues-2022%2Fmaster%2Fsrc%2Flogica.lean
+
+Sin embargo, se recomienda *no* acceder en línea, sino instalar
+Lean en su computadora directamente. Así puede guardar su progreso
+y en un futuro tal vez trabajar con teoremas más complejos también.
+-/
+
+/-
 Esta primera hoja discute las bases de lógica en Lean.
 La lógica es la base de la matemática moderna (axiomática). 
 
