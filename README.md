@@ -1,4 +1,4 @@
-#Demostración de teoremas interactiva asistida usando Lean
+# Demostración de teoremas interactiva asistida usando Lean
 
 En este pequeño workshop vamos a introducir los conceptos básicos del lenguaje y software Lean, desarrollado por Microsoft Research.
 El Software Lean nos permite usar la fundación de teoría de tipos para describir y demostrar virtualmente cualquier proposición matemática.
