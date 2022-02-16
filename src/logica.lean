@@ -54,7 +54,7 @@ notación usando dos puntos: `P : Prop`.
 
 Por ejemplo:
 -/
-variables  (P Q R: Prop).
+variables  (P Q R : Prop).
 
 /- Esta declaración está diciendole a Lean que tenemos tres variables,
 `P`, `Q` y `R`. Estas tres variables representan propoiciones.
@@ -79,8 +79,8 @@ como funciona Lean y como nos ayuda a demostrar. Toda proposición
 -/
 theorem id : P → P :=
 begin
- intro hP,
- exact hP,
+  intro hP,
+  exact hP,
 end
 
 /-
@@ -93,7 +93,8 @@ Un ejemplo un poco menos trivial, conocido como "modus ponens"
 -/
 lemma modus_ponens : P → (P → Q) → Q := 
 begin
-  intros hP hPQ,
+  intro hP,
+  intro hPQ,
   apply hPQ,
   exact hP,
 end
@@ -125,7 +126,10 @@ el objectivo. -/
 que la implicación lógica es transitiva -/
 lemma imp_trans : (P → Q) → (Q → R) → (P → R) :=
 begin
-  sorry
+  intros PQ hQR hP,
+  apply hQR,
+  apply PQ,
+  exact hP,
 end
 
 /- Le decimos a Lean que no tenemos una demostración usando
@@ -146,7 +150,7 @@ end
 /-
 Hemos visto implicación lógica. El siguiente concepto central
 que veremos es la negación.
-
+ 
 La negación de `P` se escribe `¬ P`. En Lean, esto es *por definición*
 equivalente a decir `P → false`. El origen de esto es el concepto
 en lógica de "Ex falso quodlibet", de la falsedad se puede deducir
@@ -177,9 +181,12 @@ theorem not_not_intro : P → ¬ (¬ P) :=
 begin
   intro hP,
   rw not_iff_imp_false,
+  rw not_iff_imp_false,
+  intro hP1,
+  apply hP1,
+  exact hP,
   -- Podemos usar `rw not_iff_imp_false` para cambiar `¬ X` a `X → false`. 
   -- Pero no tenemos que hacerlo porque son lo mismo *por definición*
-  sorry,
 end
 
 /-
@@ -200,7 +207,7 @@ Discutiremos esto más tarde, después de hablar de disyunciones.
 -/
 
 /- Relacionado con el anterior, vamos a demostrar otro principio 
-de razonamiento lócigo que normalmente se le concoce como 
+de razonamiento lógico que normalmente se le concoce como 
 "modus tollens". A veces se le considera una forma de 
 "demostración por contradicción": -/
 
@@ -215,9 +222,9 @@ Para demostrar la porposición de "ex falso quod libet"
 -/
 theorem ex_falso_quod_libet : false → Q :=
 begin
-  intros hFalse,
+  intros hFalso,
   exfalso,
-  exact hFalse,
+  exact hFalso,
 end
 
 /- Esta demostración ocupa una tactica 'exfalso'
@@ -251,7 +258,9 @@ end
 /- Ahora un exercicio muy sencillo! -/
 theorem and.elim_right : P ∧ Q → Q :=
 begin
-  sorry
+  intros hPyQ,
+  cases hPyQ with hP hQ,
+  exact hQ,
 end
 
 /- Hemos visto como usar una hipótesis con una conjunción.
@@ -274,7 +283,15 @@ end
 /- Un par de ejercicios: -/
 theorem and.elim : P ∧ Q → (P → Q → R) → R :=
 begin
-  sorry,
+  intros hPyQ hPQR,
+  cases hPyQ with hP hQ,
+  apply hPQR, -- P → (Q → R)
+  {
+    exact hP,
+  },
+  {
+    exact hQ,
+  }
 end
 
 /-- `∧` es simétrico -/

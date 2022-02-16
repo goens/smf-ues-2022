@@ -2,7 +2,7 @@
 
 En este pequeño workshop vamos a introducir los conceptos básicos del lenguaje y software Lean, desarrollado por Microsoft Research.
 El Software Lean nos permite usar la fundación de teoría de tipos para describir y demostrar virtualmente cualquier proposición matemática.
-Por ejemplo en 2020, Kevin Buzzard, Johan Commelin y Patrick Massot definieron espacios perfectoides.
+Por ejemplo en 2020, [Kevin Buzzard, Johan Commelin y Patrick Massot definieron espacios perfectoides](https://leanprover-community.github.io/lean-perfectoid-spaces/).
 Estos son un concepto de punta en geometría algebráica, que entre otros le valió una medalla de Fields a Peter Scholze en 2018.
 En otras palabras, Lean puede manejar conceptos y teoremas matemáticos de punta, ayudando a comprobar que el razonamiento es correcto y automatizando parte del proceso.
 
@@ -122,3 +122,4 @@ Si intentó instalar Lean y de verdad no pudo, puede usar Lean en el navegador. 
 
 A continuación, enlaces para abrir Lean en la red con los distintos módulos:
  - [Lógica](https://leanprover-community.github.io/lean-web-editor/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fgoens%2Fsmf-ues-2022%2Fmaster%2Fsrc%2Flogica.lean)
+ - [Numeros naturales](https://leanprover-community.github.io/lean-web-editor/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fgoens%2Fsmf-ues-2022%2Fmaster%2Fsrc%2Fnumeros_naturales.lean)
