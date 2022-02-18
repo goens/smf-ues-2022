@@ -1,11 +1,16 @@
 /- Este tercer y último módulo trata las bases de teoría de grupos.
+  Igual que el primero, este módulo se basa en el curso de Kevin Buzzard:
+  https://github.com/ImperialCollegeLondon/formalising-mathematics
+
   Así como construimos un poco de la teoría de los numeros 
   naturales a base de los axiomas de peano, construiremos
   la teoría de grupos a base de los axiomas de un grupo. -/
 
--- Otra vez usamos nuestros propios nombres porque Lean ya conoce los grupos.
---namespace smf22
+/- Lean nos obliga a importar todo al principio del archivo. Vamos a importar
+dos paquetes que vamos a usar sólo al final -/
 
+import group_theory.index
+import set_theory.fincard
 /-
 Para definir un grupo vamos a usar definiciones que ya existen en Lean.
 Específicamente, vamos a usar las propiedades:
@@ -218,3 +223,17 @@ begin
 end   
 
 end grupo
+
+/- Igual que con los números naturales, Lean ya conoce la teoría de grupos
+y muchas propiedades de eso. Como un ejemplo les quería mostrar el teorema de 
+Lagrange, que para un grupo finito `G` el orden de un subgrupo `H ≤ G` divide
+ al orden de `G`. Curiosamente ese teorema no estaba en Lean exactamente, 
+ así que lo vamos a demostrar aquí, como un pequeño ejemplo -/ 
+
+lemma card_dvd_card {G : Type*} [group G] [fintype G] (H: subgroup G): 
+nat.card H ∣ nat.card G :=
+begin
+  use H.index,
+  symmetry,
+  exact subgroup.card_mul_index H,
+end
