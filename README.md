@@ -123,3 +123,4 @@ Si intentó instalar Lean y de verdad no pudo, puede usar Lean en el navegador. 
 A continuación, enlaces para abrir Lean en la red con los distintos módulos:
  - [Lógica](https://leanprover-community.github.io/lean-web-editor/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fgoens%2Fsmf-ues-2022%2Fmaster%2Fsrc%2Flogica.lean)
  - [Numeros naturales](https://leanprover-community.github.io/lean-web-editor/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fgoens%2Fsmf-ues-2022%2Fmaster%2Fsrc%2Fnumeros_naturales.lean)
+ - [Grupos](https://leanprover-community.github.io/lean-web-editor/#url=https%3A%2F%2Fraw.githubusercontent.com%2Fgoens%2Fsmf-ues-2022%2Fmaster%2Fsrc%2Fgrupos.lean)
